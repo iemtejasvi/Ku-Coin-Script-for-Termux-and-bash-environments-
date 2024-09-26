@@ -12,23 +12,36 @@ This Python script automates interaction with the KuCoin "xKucoin" account on Te
 
 ## Requirements
 
-- **Python 3.x** (Make sure it's installed in your Termux or bash environment).
-- **Termux (on Android)** or **any bash-compatible terminal** on Linux systems.
+- **Python 3.x** (Ensure it's installed in your Termux or bash environment).
+- **Termux** on Android or **any bash-compatible terminal** on Linux systems.
 
 ## Installation and Setup
 
-### 1. Install Python in Termux
+### 1. Install Git and Python in Termux
 
-Ensure you have Python installed in your Termux or bash environment. To install Python in **Termux**, use the following commands:
+Before starting, you need to install **Git** and **Python** in Termux. Follow these commands to install the necessary packages:
+
+#### Update and Upgrade Termux:
 
 ```bash
 pkg update && pkg upgrade
+```
+
+#### Install Git:
+
+```bash
+pkg install git
+```
+
+#### Install Python:
+
+```bash
 pkg install python
 ```
 
 ### 2. Clone the Repository
 
-Next, clone the script repository from GitHub:
+Once Git is installed, clone the KuCoin script repository:
 
 ```bash
 git clone https://github.com/iemtejasvi/Ku-Coin-Script-for-Termux-and-bash-environments-.git
@@ -51,7 +64,7 @@ To use the script, you need to retrieve your Telegram user data from the officia
 
 #### How to Retrieve Telegram Data:
 
-1. Install the Telegram app on your PC (do **not** use the browser version).
+1. Install the Telegram app on your **PC** (do **not** use the browser version).
 2. Open Telegram and navigate to **Settings** > **Advanced** > **Experimental Settings**, then enable **Webview Inspecting**.
 3. Search for "xKucoin" in Telegram and confirm it has a blue check mark.
 4. Open the official account and click on **Play Game**.
@@ -86,32 +99,46 @@ The script provides an easy-to-use interface for managing multiple KuCoin accoun
 - **Delete an account**: Removes a selected account.
 - **Clear all accounts**: Deletes all accounts (use with caution).
 
-## Running on Mobile Termux
+## Running the Script on Mobile Termux
 
 This script is specifically designed to work on **Termux**, making it perfect for mobile automation. You can keep the script running in the background on your Android device using Termux's `wake lock` feature to prevent the device from sleeping during execution.
 
-1. **Keep the script running in the background**:
+### 1. Keep the Script Running in the Background:
 
-   If you want to ensure the script keeps running even when you close Termux or the screen locks, you can run it inside `tmux`:
+If you want to ensure the script keeps running even when you close Termux or lock the screen, you can run it inside **tmux**:
 
-   ```bash
-   apt install tmux
-   tmux new -s kucoin
-   python ku.py
-   ```
+#### Install tmux:
 
-   To exit tmux while keeping it running in the background, press `Ctrl + B`, then `D`.
+```bash
+pkg install tmux
+```
 
-2. **Reattach the session later**:
+#### Start a tmux session and run the script:
 
-   ```bash
-   tmux attach -t kucoin
-   ```
+```bash
+tmux new -s kucoin
+python ku.py
+```
 
-This ensures the script runs in the background without interruptions.
+This will allow the script to run in a separate session.
+
+To **detach** from the tmux session without stopping the script, press:
+
+```
+Ctrl + B, then D
+```
+
+### 2. Reattach the tmux Session Later:
+
+If you want to reattach to the session to check on the script, use:
+
+```bash
+tmux attach -t kucoin
+```
+
+This ensures the script runs in the background without interruptions even if the terminal is closed.
 
 ## Conclusion
 
 The KuCoin-Script for Termux and bash environments is a lightweight, mobile-friendly solution for automating KuCoin rewards via Telegram. It can be run easily on Android devices or Linux systems, offering a flexible solution for long-term automation.
 
-For more information or updates, visit the repository: [KuCoin-Script for Termux and Bash Environments](https://github.com/iemtejasvi/Ku-Coin-Script-for-Termux-and-bash-environments-.git).
