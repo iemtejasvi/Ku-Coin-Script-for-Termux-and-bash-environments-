@@ -50,13 +50,31 @@ cd Ku-Coin-Script-for-Termux-and-bash-environments-
 
 ### 3. Install Required Python Packages
 
-The required Python libraries are listed in the `requirements.txt` file. Install them using pip:
+There are two ways to install the required Python packages:
+
+#### a. Using `requirements.txt` (If Available):
+
+If the `requirements.txt` file exists in the repository, you can install the dependencies with this command:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-This will install all the necessary packages such as `colorama`, `requests`, and others.
+#### b. Manually Installing Dependencies (If `requirements.txt` Fails):
+
+If the `requirements.txt` file is missing or the installation fails, you can manually install the required libraries:
+
+- **Colorama**: For colored terminal output.
+- **Requests**: For handling HTTP requests.
+
+Run these commands to install the required libraries manually:
+
+```bash
+pip install colorama
+pip install requests
+```
+
+Once these dependencies are installed, you can proceed with running the script.
 
 ### 4. Retrieve Your Telegram Data
 
